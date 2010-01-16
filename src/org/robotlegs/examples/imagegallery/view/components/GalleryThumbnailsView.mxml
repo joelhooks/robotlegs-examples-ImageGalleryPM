@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/halo" width="100%" height="100">
+	<fx:Script>
+		<![CDATA[
+			import org.robotlegs.examples.imagegallery.view.models.IGalleryThumbnailsPresentationModel;
+			
+			private var _model:IGalleryThumbnailsPresentationModel;
+			
+			public function get model():IGalleryThumbnailsPresentationModel
+			{
+				return _model;
+			}
+			
+			[Inject]
+			[Bindable]
+			public function set model(value:IGalleryThumbnailsPresentationModel):void
+			{
+				_model = value;
+			}
+		]]>
+	</fx:Script>
+	<s:Rect width="100%"
+			height="100%">
+		<s:fill>
+			<s:SolidColor color="#111111"/>
+		</s:fill>
+	</s:Rect>
+	<s:Group width="100%" height="100%">
+		<s:layout>
+			<s:VerticalLayout gap="0"/>
+		</s:layout>
+		<s:DataGroup id="dgThumbnails"
+					 clipAndEnableScrolling="true"
+					 dataProvider="{model.dataProvider}"
+					 width="100%"
+					 height="85" 
+					 itemRenderer="org.robotlegs.examples.imagegallery.view.components.renderers.GalleryImageThumbnailItemRenderer">
+			<s:layout>
+				<s:HorizontalLayout gap="0"/>
+			</s:layout>
+		</s:DataGroup>
+		<s:HScrollBar id="thumbScrollBar"
+					  viewport="{dgThumbnails}"
+					  width="100%"
+					  smoothScrolling="true"/>
+	</s:Group>
+</s:Group>
