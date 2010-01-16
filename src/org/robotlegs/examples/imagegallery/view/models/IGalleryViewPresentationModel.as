@@ -6,6 +6,5 @@ package org.robotlegs.examples.imagegallery.view.models
 	public interface IGalleryViewPresentationModel
 	{
 		function get imageSource():String;
-		function set imageSource(v:String):void;
 	}
 }

@@ -8,6 +8,5 @@ package org.robotlegs.examples.imagegallery.view.models
 	public interface IGalleryThumbnailsPresentationModel
 	{
 		function get dataProvider():ArrayCollection;
-		function set dataProvider(v:ArrayCollection):void;	
 	}
 }
