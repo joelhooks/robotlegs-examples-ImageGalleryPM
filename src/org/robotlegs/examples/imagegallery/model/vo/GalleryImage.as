@@ -1,7 +1,7 @@
 package org.robotlegs.examples.imagegallery.model.vo
 {
 	[Bindable]
-	public class GalleryImage
+	public class GalleryImage implements IGalleryImage
 	{
 		protected var _URL:String;
 		protected var _thumbURL:String;
